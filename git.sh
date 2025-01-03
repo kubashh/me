@@ -6,8 +6,13 @@ if ! [ $1 = 0 ] && ! [ $1 = 1 ] && ! [ $1 = 2 ] && ! [ $1 = 3 ]; then
   exit
 fi
 
+oldv="0.0.0.0"
+
 # Read old version
-oldv=$(head -n 1 version)
+if [ -f ".version" ]; then
+  echo "File not found!"
+  oldv=$(head -n 1 ".version")
+fi
 
 # Init versions variables
 v0=0
@@ -66,7 +71,7 @@ fi
 newv=$v0.$v1.$v2.$v3
 
 # Update version file
-echo $newv > version
+echo $newv > ".version"
 
 # Debug
 echo "$oldv (old)"
