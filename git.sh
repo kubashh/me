@@ -11,7 +11,7 @@ oldv="0.0.0.0"
 # Read old version
 if [ -f ".version" ]; then
   echo "File not found!"
-  oldv=$(head -n 1 ".version")
+  oldv=$(head -n 1 .version)
 fi
 
 # Init versions variables
@@ -71,7 +71,7 @@ fi
 newv=$v0.$v1.$v2.$v3
 
 # Update version file
-echo $newv > ".version"
+echo $newv > .version
 
 # Debug
 echo "$oldv (old)"
