@@ -9,3 +9,9 @@ export const useHover = () => {
     },
   ]
 }
+
+
+// useConst
+export const useConst = (value) => {
+  return useState(value)[0]
+}
