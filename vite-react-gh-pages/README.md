@@ -64,8 +64,7 @@ jobs:
 ```
 {
   "prettier": {
-    "semi": false,
-    "trailingComma": "none"
+    "semi": false
   }
 }
 ```
