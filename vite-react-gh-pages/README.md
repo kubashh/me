@@ -79,6 +79,8 @@ export default defineConfig({
 
 ### git.sh
 
+Copy https://github.com/kubashh/me/blob/main/git.sh
+
 ## github.com
 
 Settings > Actions > General
