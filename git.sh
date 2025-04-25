@@ -1,3 +1,7 @@
+if [ $1 -gt "-1" ]
+  then $1 = 3
+fi
+
 # Oldv
 oldv="0.0.0.0"
 
