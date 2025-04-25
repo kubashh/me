@@ -1,6 +1,4 @@
-if [ $1 -gt "-1" ]
-  then $1 = 3
-fi
+#!/bin/sh
 
 # Oldv
 oldv="0.0.0.0"
@@ -10,13 +8,7 @@ if [ -f ".version" ]; then
   oldv=$(head -n 1 .version)
 fi
 
-# Init versions variables
-v0=0
-v1=0
-v2=0
-v3=0
-
-# Set values
+# Set vars
 i=0
 for element in $(echo $oldv | tr "." "\n")
 do
@@ -39,29 +31,30 @@ do
   i=$((i+1))
 done
 
-
 # Increase version
-if [ $1 = 0 ]; then
-  v0=$((v0+1))
-  v1=0
-  v2=0
-  v3=0
-fi
+case $1 in
+  0)
+    v0=$((v0+1))
+    v1=0
+    v2=0
+    v3=0
+    ;;
 
-if [ $1 = 1 ]; then
-  v1=$((v1+1))
-  v2=0
-  v3=0
-fi
+  1)
+    v1=$((v1+1))
+    v2=0
+    v3=0
+    ;;
 
-if [ $1 = 2 ]; then
-  v2=$((v2+1))
-  v3=0
-fi
+  2)
+    v2=$((v2+1))
+    v3=0
+    ;;
 
-if ! [ $1 = 0 ] && ! [ $1 = 1 ] && ! [ $1 = 2 ]; then
-  v3=$((v3+1))
-fi
+  *)
+    v3=$((v3+1))
+    ;;
+esac
 
 # Set new version
 newv=$v0.$v1.$v2.$v3
@@ -69,9 +62,12 @@ newv=$v0.$v1.$v2.$v3
 # Update version file
 echo $newv > .version
 
+# Debug
+echo "$oldv (old), $newv (new)"
+
 # Git
 git add .
 git commit -m $newv
 git push
 
-# clear
+clear
