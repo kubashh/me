@@ -70,4 +70,4 @@ git add .
 git commit -m $newv
 git push
 
-clear
+# clear
