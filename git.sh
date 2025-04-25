@@ -3,7 +3,6 @@ oldv="0.0.0.0"
 
 # Read old version
 if [ -f ".version" ]; then
-  echo "File not found!"
   oldv=$(head -n 1 .version)
 fi
 

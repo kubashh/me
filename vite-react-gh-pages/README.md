@@ -96,7 +96,7 @@ gh-pages
 ## Terminal
 
 ```
-sh git.sh 3
+sh git.sh
 ```
 
 https://www.vd-developer.online/blog/vite-react-deploy-github
