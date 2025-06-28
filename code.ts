@@ -70,6 +70,14 @@ export const useUrl = (key: string, value: string) => {
   return arr
 }
 
+// useClient
+export function useClient() {
+  const [isClient, setIsClient] = useState(false)
+  useEffect(() => setIsClient(true), [isClient])
+
+  return isClient
+}
+
 // Signal
 export class Signal<T> {
   v: T
