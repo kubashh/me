@@ -28,9 +28,6 @@ esac
 # Set new version
 ver=$v0.$v1.$v2.$v3
 
-# Debug
-echo "version: $ver"
-
 # Update version file
 echo $ver > .version
 
