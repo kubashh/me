@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+type Void = () => void
+
 function useConst<T>(v: T) {
   return useState<T>(v)[0]
 }
