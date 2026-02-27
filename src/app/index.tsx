@@ -1,18 +1,10 @@
-/// <reference path="../../node_modules/wdwh/index.d.ts" />
-
-import App from "./App.tsx"
-
-export const config: WdwhConfig = {
-  outdir: `./dist`,
-  bundleCss: true,
-  hashFiles: true,
-  cleanPrev: true,
-}
+import { type Metadata } from "wdwh";
+import App from "./App.tsx";
 
 export const metadata: Metadata = {
   iconPath: `./react.svg`,
   title: `Example`,
-}
+};
 
 export default function Page() {
   return (
@@ -22,5 +14,5 @@ export default function Page() {
         <App />
       </body>
     </html>
-  )
+  );
 }

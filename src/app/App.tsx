@@ -3,5 +3,5 @@ export default function App() {
     <>
       <main>Hello portfolio!</main>
     </>
-  )
+  );
 }

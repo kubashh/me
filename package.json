@@ -9,8 +9,10 @@
     "typescript": "latest",
     "wdwh": "latest"
   },
+  "wdwh": {
+    "cleanPrev": true
+  },
   "prettier": {
-    "semi": false,
     "printWidth": 108
   }
 }
